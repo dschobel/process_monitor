@@ -1,0 +1,4 @@
+<%= javascript_include_tag 'prototype' %>
+<h2>Processes List</h2>
+<pre id="processes">Gathering processes...</pre>  
+<%= periodically_call_remote :url => "/processes/list", :update => "processes", :frequency => 3, :method => :get %>  
